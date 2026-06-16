@@ -1,0 +1,436 @@
+{
+  "subject": "英语",
+  "grade_range": "高一-高三",
+  "version": "1.0.0",
+  "last_updated": "2026-06-17",
+  "knowledge_points": [
+    {
+      "id": "english_001",
+      "title": "时态系统（Tenses）",
+      "category": "语法",
+      "grade": "高一",
+      "difficulty": 3,
+      "description": "系统掌握英语16种时态中的高考重点时态：一般现在时、一般过去时、一般将来时、现在进行时、过去进行时、现在完成时、过去完成时、过去将来时的构成、用法及时间标志词。",
+      "key_concepts": [
+        "一般现在时",
+        "一般过去时",
+        "一般将来时",
+        "现在进行时",
+        "过去进行时",
+        "现在完成时",
+        "过去完成时",
+        "时间标志词"
+      ],
+      "formulas": [
+        "一般现在时：S + V(原形/三单) + O. 标志词：always, usually, often, every day",
+        "现在完成时：S + have/has + V-ed(过去分词) + O. 标志词：already, yet, just, ever, never, since, for",
+        "过去完成时：S + had + V-ed + O. 标志词：by the time, before(过去), by the end of last...",
+        "现在进行时：S + am/is/are + V-ing. 标志词：now, at the moment, look!, listen!"
+      ],
+      "examples": [
+        {
+          "type": "基础",
+          "problem": "用正确时态填空：I ___ (live) in Beijing since 2020.",
+          "solution": "have lived。since 2020表示从过去某时持续到现在，用现在完成时。"
+        },
+        {
+          "type": "高考",
+          "problem": "By the time he arrived, the meeting ___ (begin) for ten minutes.",
+          "solution": "had been on。by the time + 过去时，主句用过去完成时；begin是短暂动词，需改为持续性表达be on + for + 时间段。"
+        }
+      ],
+      "common_mistakes": [
+        "短暂性动词（begin, join, die, leave）不能与for+时间段连用，需改为持续性状态",
+        "混淆现在完成时和一般过去时：现在完成时强调对现在的影响，一般过去时仅陈述过去事实",
+        "by the time后接过去时→过去完成时；接将来时→将来完成时"
+      ],
+      "related_points": [
+        "english_002",
+        "english_003"
+      ]
+    },
+    {
+      "id": "english_002",
+      "title": "定语从句（Attributive Clauses）",
+      "category": "语法",
+      "grade": "高一",
+      "difficulty": 3,
+      "description": "掌握关系代词（who, whom, whose, which, that）和关系副词（when, where, why）的用法，理解限制性和非限制性定语从句的区别。",
+      "key_concepts": [
+        "关系代词",
+        "关系副词",
+        "限制性定语从句",
+        "非限制性定语从句",
+        "先行词",
+        "介词+关系代词"
+      ],
+      "formulas": [
+        "who/whom指人（who作主语，whom作宾语），which指物，that指人或物",
+        "whose + 名词：表所属关系，'……的'",
+        "when=at/in/on which（先行词为时间），where=in/at which（先行词为地点），why=for which（先行词为reason）",
+        "只用that不用which的情况：①先行词被最高级修饰 ②先行词被序数词/数词修饰 ③先行词为all/much/everything等不定代词 ④先行词既有人又有物"
+      ],
+      "examples": [
+        {
+          "type": "基础",
+          "problem": "This is the book ___ I bought yesterday.",
+          "solution": "which/that。先行词the book指物，关系词在从句中作bought的宾语，用which或that。"
+        },
+        {
+          "type": "高考",
+          "problem": "He has two sons, both of ___ are doctors.",
+          "solution": "whom。非限制性定语从句中，'both of + 关系代词'指人用whom。不能用who/that。"
+        }
+      ],
+      "common_mistakes": [
+        "非限制性定语从句不能用that引导",
+        "which指代前面整个句子时，从句谓语用单数",
+        "混淆定语从句与同位语从句：定语从句关系词有词义且充当成分，同位语从句that无词义不充当成分"
+      ],
+      "related_points": [
+        "english_003",
+        "english_004"
+      ]
+    },
+    {
+      "id": "english_003",
+      "title": "非谓语动词（Non-finite Verbs）",
+      "category": "语法",
+      "grade": "高二",
+      "difficulty": 4,
+      "description": "掌握动词不定式（to do）、动名词（doing）、现在分词（doing）和过去分词（done）的语法功能和意义区别。",
+      "key_concepts": [
+        "动词不定式",
+        "动名词",
+        "现在分词",
+        "过去分词",
+        "独立主格",
+        "悬垂结构"
+      ],
+      "formulas": [
+        "不定式作主语：To learn English is important. / It is important to learn English.",
+        "动名词作主语：Learning English is important.（表习惯性/一般性动作）",
+        "不定式 vs 动名词：remember/forget to do（未做）vs remember/forget doing（已做）",
+        "分词作定语：doing表主动/进行，done表被动/完成",
+        "独立主格：名词/代词 + 分词/不定式/介词短语，表原因/时间/条件/伴随"
+      ],
+      "examples": [
+        {
+          "type": "基础",
+          "problem": "I remember ___ (lock) the door before I left.",
+          "solution": "locking。remember doing表示'记得做过某事'（已做），remember to do表示'记得去做某事'（未做）。此处门已锁，用locking。"
+        },
+        {
+          "type": "高考",
+          "problem": "___ (face) with difficulties, he didn't give up.",
+          "solution": "Faced。face sb with sth→sb be faced with，此处过去分词作状语表被动（他'被'困难所面对=面临困难）。"
+        }
+      ],
+      "common_mistakes": [
+        "混淆现在分词和过去分词作定语/表语的区别：interesting（令人有趣的）vs interested（感到有趣的）",
+        "独立主格结构误用为从句：缺少连词导致悬垂结构",
+        "need/want/require + doing = need/want/require + to be done（主动形式表被动含义）"
+      ],
+      "related_points": [
+        "english_001",
+        "english_004"
+      ]
+    },
+    {
+      "id": "english_004",
+      "title": "虚拟语气（Subjunctive Mood）",
+      "category": "语法",
+      "grade": "高二",
+      "difficulty": 4,
+      "description": "掌握if条件句中的虚拟语气、wish/as if/as though引导的虚拟语气、以及名词性从句中should+V原形的虚拟用法。",
+      "key_concepts": [
+        "if虚拟条件句",
+        "wish虚拟句",
+        "as if/as though",
+        "名词性从句中的虚拟",
+        "含蓄虚拟"
+      ],
+      "formulas": [
+        "与现在事实相反：if + S + did/were, S + would/could/should/might + do",
+        "与过去事实相反：if + S + had done, S + would/could/should/might + have done",
+        "与将来事实相反：if + S + did/were/were to do/should do, S + would/could/might + do",
+        "wish + 过去时（现在）/ had done（过去）/ would do（将来不愿发生的事）",
+        "suggest/insist/demand/order等后接从句用(should) + V原形"
+      ],
+      "examples": [
+        {
+          "type": "基础",
+          "problem": "If I ___ (be) you, I would not do that.",
+          "solution": "were。与现在事实相反的虚拟语气，be动词统一用were（不论人称）。"
+        },
+        {
+          "type": "高考",
+          "problem": "I wish I ___ (study) harder last term.",
+          "solution": "had studied。wish后接与过去事实相反的虚拟，用had done。"
+        }
+      ],
+      "common_mistakes": [
+        "if省略倒装：Were I you... / Had I known... / Should it rain...",
+        "suggest作'暗示'讲时从句不用虚拟；作'建议'讲时才用(should) do",
+        "含蓄虚拟条件句通过without/but for/or/otherwise等词隐含"
+      ],
+      "related_points": [
+        "english_001",
+        "english_005"
+      ]
+    },
+    {
+      "id": "english_005",
+      "title": "完形填空解题策略",
+      "category": "题型技巧",
+      "grade": "高二",
+      "difficulty": 3,
+      "description": "掌握完形填空的核心解题方法，包括上下文语境推断、词义辨析、逻辑关系判断、感情色彩分析等技巧。",
+      "key_concepts": [
+        "语境推断",
+        "词义辨析",
+        "逻辑关系",
+        "感情色彩",
+        "首句主旨",
+        "复现词汇"
+      ],
+      "formulas": [
+        "解题三步法：①通读全文抓主旨（关注首句，不急于填空）→②逐空细填（上下文线索+词义辨析）→③复查验证（代入检查逻辑连贯性）",
+        "常见逻辑关系词：转折(but/however/yet)、因果(so/because/therefore)、递进(moreover/furthermore)、举例(for example/such as)",
+        "词汇复现：原词复现、同义词复现、反义词复现、上下义词复现"
+      ],
+      "examples": [
+        {
+          "type": "高考",
+          "problem": "He tried hard to ___ the crying baby, but in vain. A. comfort B. confirm C. confuse D. condemn",
+          "solution": "A. comfort。根据语境'trying hard'和'crying baby'，需要'安慰'婴儿。confirm确认、confuse混淆、condemn谴责均不合语境。"
+        },
+        {
+          "type": "基础",
+          "problem": "如何利用逻辑关系词解题？",
+          "solution": "①找到空格前后的逻辑关系词；②判断是转折/因果/递进/举例等关系；③根据关系推断空格处应填入的词义方向。如however表转折，前后语义应相反。"
+        }
+      ],
+      "common_mistakes": [
+        "第一遍就读一个空填一个空，缺乏全局理解",
+        "只关注单个句子，忽视上下文的感情线索和故事走向",
+        "近义词辨析不到位，如affect/influence/impact的程度差异"
+      ],
+      "related_points": [
+        "english_006",
+        "english_007"
+      ]
+    },
+    {
+      "id": "english_006",
+      "title": "阅读理解——主旨大意题",
+      "category": "阅读技能",
+      "grade": "高一",
+      "difficulty": 3,
+      "description": "掌握阅读理解中主旨大意题（main idea/best title/purpose）的解题方法，能准确概括文章中心思想。",
+      "key_concepts": [
+        "主题句",
+        "段落大意",
+        "标题选择",
+        "写作目的",
+        "文章结构"
+      ],
+      "formulas": [
+        "主题句位置：首段首句/末段末句/转折处(but/however)",
+        "标题特征：概括性强、简洁醒目、涵盖全文、不偏不窄",
+        "错误选项特征：①以偏概全（只涉及某个细节）②过度延伸（超出文章范围）③无中生有（文章未提及）"
+      ],
+      "examples": [
+        {
+          "type": "基础",
+          "problem": "文章首段提出观点，中间三段分别举例论证，末段总结。问最佳标题。",
+          "solution": "最佳标题应涵盖全文中心观点，而非某一段的举例内容。注意首段首句和末段总结句是确定主旨的关键。"
+        },
+        {
+          "type": "高考",
+          "problem": "What is the main purpose of the passage? A. To entertain B. To inform C. To persuade D. To describe",
+          "solution": "根据文章体裁和语言特征判断：议论文/广告→persuade；说明文/新闻→inform；记叙文/故事→entertain；描写文→describe。注意结合文章具体内容综合判断。"
+        }
+      ],
+      "common_mistakes": [
+        "选细节性标题，以偏概全",
+        "主旨题选了一个正确但不是文章核心的选项",
+        "忽视文章的体裁对主旨概括的影响"
+      ],
+      "related_points": [
+        "english_007",
+        "english_008"
+      ]
+    },
+    {
+      "id": "english_007",
+      "title": "阅读理解——推理判断题",
+      "category": "阅读技能",
+      "grade": "高二",
+      "difficulty": 4,
+      "description": "掌握推理判断题（infer/imply/conclude）的解题方法，能根据文章信息进行合理推断，区分合理推断与主观臆断。",
+      "key_concepts": [
+        "隐含意义",
+        "推理判断",
+        "作者态度",
+        "文章出处",
+        "合理推断"
+      ],
+      "formulas": [
+        "推理原则：基于原文信息推断，不能脱离原文主观臆断",
+        "常见题型：What can we infer from...? / The author implies that... / What's the author's attitude?",
+        "态度词分类：positive(positive/optimistic/approving), negative(negative/critical/disapproving), neutral(objective/neutral/impartial)"
+      ],
+      "examples": [
+        {
+          "type": "高考",
+          "problem": "The author's attitude towards artificial intelligence is ___.",
+          "solution": "根据文中评价性词句判断：如有more importantly, remarkably等正面词汇→positive；如有however, concern, risk等→negative/critical。注意区分作者态度和文中引用他人的态度。"
+        },
+        {
+          "type": "基础",
+          "problem": "如何区分'合理推断'和'过度推断'？",
+          "solution": "合理推断：原文有依据+符合常识+逻辑成立。过度推断：原文依据不足或加入了个人主观假设。推断题答案通常是原文信息的'一步之遥'，而非'千里之外'。"
+        }
+      ],
+      "common_mistakes": [
+        "将原文直接陈述的信息当作'推断'（推理判断题答案不在原文中直接出现）",
+        "过度推断：加入了原文没有的信息",
+        "混淆作者态度和文中引用专家/他人的态度"
+      ],
+      "related_points": [
+        "english_005",
+        "english_006",
+        "english_008"
+      ]
+    },
+    {
+      "id": "english_008",
+      "title": "书面表达——高级句型与衔接",
+      "category": "写作",
+      "grade": "高三",
+      "difficulty": 4,
+      "description": "掌握高考英语作文中常用的加分句型和衔接手段，包括倒装句、强调句、非限制性定语从句、独立主格、各类从句的灵活运用。",
+      "key_concepts": [
+        "倒装句",
+        "强调句",
+        "非限制性定语从句",
+        "独立主格",
+        "衔接词",
+        "高级替换词"
+      ],
+      "formulas": [
+        "倒装句：Not only...but also...置于句首→Not only did he..., but he also...",
+        "强调句：It is/was + 被强调部分 + that/who + 其余",
+        "Only + 状语置于句首→Only in this way can we solve the problem.",
+        "高级替换：very→exceedingly, think→hold the view that, important→of great significance",
+        "衔接词：Moreover/Furthermore(递进), Nevertheless/However(转折), Consequently(因果), In conclusion(总结)"
+      ],
+      "examples": [
+        {
+          "type": "高考",
+          "problem": "将'Students should take part in social practice. It is beneficial.'合并为高级句",
+          "solution": "It is highly beneficial for students to take part in social practice. (强调句) 或 Taking part in social practice, students can benefit a lot. (非谓语) 或 Only by taking part in social practice can students benefit greatly. (倒装句)"
+        },
+        {
+          "type": "基础",
+          "problem": "如何在作文中自然过渡？",
+          "solution": "①段首用衔接词：To begin with / What's more / Last but not least；②使用过渡句：Not only...but also... / Apart from..., ...also...；③语义衔接：上段末句关键词与下段首句形成词汇复现。"
+        }
+      ],
+      "common_mistakes": [
+        "堆砌高级句型但逻辑不通，为用而用",
+        "衔接词使用不当，如因果关系用but",
+        "书写潦草、拼写错误、时态不一致等基础失分"
+      ],
+      "related_points": [
+        "english_002",
+        "english_003",
+        "english_004"
+      ]
+    },
+    {
+      "id": "english_009",
+      "title": "听力解题技巧",
+      "category": "题型技巧",
+      "grade": "高一",
+      "difficulty": 2,
+      "description": "掌握高考英语听力的高频场景和解题技巧，包括预判考点、抓关键词、辨别数字时间地点等细节信息的方法。",
+      "key_concepts": [
+        "场景词汇",
+        "关键词捕捉",
+        "数字与时间",
+        "推断言外之意",
+        "预读选项"
+      ],
+      "formulas": [
+        "高频场景：问路、购物、就餐、就医、租房、机场、图书馆、校园生活",
+        "解题技巧：①预读选项划关键词 ②听开头（常出主旨/地点）③注意转折(but/however/actually)后的信息 ④注意同义替换",
+        "数字题：注意计算（价格、时间、距离），听到数字不一定选该数字"
+      ],
+      "examples": [
+        {
+          "type": "基础",
+          "problem": "听力中原句：'The shirt was $50, but I got a 20% discount.' 问How much did the man pay?",
+          "solution": "$40。原价$50打八折（100%-20%=80%），$50×0.8=$40。注意不是直接选听到的$50。"
+        },
+        {
+          "type": "基础",
+          "problem": "如何预判考点？",
+          "solution": "①看选项中的关键词：如果四个选项都是时间→考时间；都是地点→考地点。②看选项差异：找出选项间的区别点，听音时重点关注。③关注特殊表达：but后面的内容往往是答案。"
+        }
+      ],
+      "common_mistakes": [
+        "听到什么选什么，不注意同义替换和数字计算",
+        "不预读选项，听完后才看题来不及分析",
+        "忽略but/however/actually等转折词后的关键信息"
+      ],
+      "related_points": [
+        "english_001",
+        "english_005"
+      ]
+    },
+    {
+      "id": "english_010",
+      "title": "词法——词性转换与构词法",
+      "category": "词汇",
+      "grade": "高一",
+      "difficulty": 2,
+      "description": "掌握英语构词法（前缀、后缀、合成、转化、缩略），能根据构词规律推测生词词义，并在语法填空中正确进行词性转换。",
+      "key_concepts": [
+        "前缀",
+        "后缀",
+        "合成词",
+        "词性转化",
+        "词族",
+        "派生词"
+      ],
+      "formulas": [
+        "常见前缀：un-/in-/im-/dis-/non-(否定), re-(再次), pre-(前), mis-(错), over-(过度)",
+        "常见后缀：-tion/-sion/-ment/-ness/-ity(名词), -ful/-ous/-ive/-able(形容词), -ly(副词), -ize/-ify/-en(动词)",
+        "词性判断口诀：冠/形后接名词，副修饰动/形/副，系动词后接形容词"
+      ],
+      "examples": [
+        {
+          "type": "基础",
+          "problem": "用所给词的正确形式填空：The ___ (develop) of technology has changed our life.",
+          "solution": "development。冠词the后需名词形式，develop→development（发展）。"
+        },
+        {
+          "type": "高考",
+          "problem": "语法填空中如何判断该填什么词性？",
+          "solution": "①分析句子结构，确定该空需要什么词性（主/宾→名词，修饰名词→形容词，修饰动词→副词）；②根据所给词的词根和所需词性，选择合适的前缀/后缀进行转换。"
+        }
+      ],
+      "common_mistakes": [
+        "语法填空中不分析句子成分，凭感觉填词",
+        "忽视一词多义导致词性判断错误，如present(n.礼物/present(v.呈现)",
+        "前缀改变词义但不改变词性，后缀通常改变词性这一规律掌握不牢"
+      ],
+      "related_points": [
+        "english_001",
+        "english_003"
+      ]
+    }
+  ]
+}
