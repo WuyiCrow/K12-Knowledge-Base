@@ -1,125 +1,88 @@
 #!/usr/bin/env python3
-"""
-K12知识点导入SQLite工具
-将knowledge_base下的JSON文件导入到SQLite数据库
-
-用法:
-    python import_to_sqlite.py --source ../knowledge_base/ --db k12.db
-"""
+"""K12知识库 SQLite导入工具"""
 
 import json
 import sqlite3
-import argparse
 import os
-import sys
-from pathlib import Path
+import glob
 
+DB_PATH = "knowledge.db"
+KNOWLEDGE_BASE_DIR = os.path.join(os.path.dirname(__file__), "..", "knowledge_base")
 
 def create_tables(conn):
-    """创建数据库表"""
-    conn.executescript("""
+    """创建数据表"""
+    conn.execute("""
         CREATE TABLE IF NOT EXISTS knowledge_points (
-            id TEXT PRIMARY KEY,
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
             subject TEXT NOT NULL,
             title TEXT NOT NULL,
-            category TEXT,
-            grade TEXT,
-            difficulty INTEGER,
-            description TEXT,
-            key_concepts TEXT,
-            formulas TEXT,
-            examples TEXT,
-            common_mistakes TEXT,
-            related_points TEXT,
-            grade_range TEXT
-        );
-
-        CREATE INDEX IF NOT EXISTS idx_subject ON knowledge_points(subject);
-        CREATE INDEX IF NOT EXISTS idx_grade ON knowledge_points(grade);
-        CREATE INDEX IF NOT EXISTS idx_category ON knowledge_points(category);
-        CREATE INDEX IF NOT EXISTS idx_difficulty ON knowledge_points(difficulty);
-
-        CREATE TABLE IF NOT EXISTS subjects (
-            name TEXT PRIMARY KEY,
-            grade_range TEXT,
-            version TEXT,
-            point_count INTEGER
-        );
+            content TEXT NOT NULL,
+            source TEXT,
+            difficulty TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
     """)
+    conn.execute("""
+        CREATE INDEX IF NOT EXISTS idx_subject ON knowledge_points(subject)
+    """)
+    conn.execute("""
+        CREATE INDEX IF NOT EXISTS idx_difficulty ON knowledge_points(difficulty)
+    """)
+    conn.commit()
 
-
-def import_subject(conn, json_path, subject_name):
-    """导入单个学科的JSON文件"""
+def import_subject(conn, json_path, subject_cn):
+    """导入单个学科"""
     with open(json_path, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-
-    subject = data.get('subject', subject_name)
-    grade_range = data.get('grade_range', '')
-    version = data.get('version', '1.0.0')
-    points = data.get('knowledge_points', [])
-
+        points = json.load(f)
+    
     count = 0
-    for kp in points:
+    for p in points:
         conn.execute("""
-            INSERT OR REPLACE INTO knowledge_points
-            (id, subject, title, category, grade, difficulty, description,
-             key_concepts, formulas, examples, common_mistakes, related_points, grade_range)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            INSERT INTO knowledge_points (subject, title, content, source, difficulty)
+            VALUES (?, ?, ?, ?, ?)
         """, (
-            kp.get('id', ''),
-            subject,
-            kp.get('title', ''),
-            kp.get('category', ''),
-            kp.get('grade', ''),
-            kp.get('difficulty', 0),
-            kp.get('description', ''),
-            json.dumps(kp.get('key_concepts', []), ensure_ascii=False),
-            json.dumps(kp.get('formulas', []), ensure_ascii=False),
-            json.dumps(kp.get('examples', []), ensure_ascii=False),
-            json.dumps(kp.get('common_mistakes', []), ensure_ascii=False),
-            json.dumps(kp.get('related_points', []), ensure_ascii=False),
-            grade_range
+            p.get('subject', subject_cn),
+            p.get('title', ''),
+            p.get('content', ''),
+            p.get('source', ''),
+            p.get('difficulty', '')
         ))
         count += 1
-
-    conn.execute("""
-        INSERT OR REPLACE INTO subjects (name, grade_range, version, point_count)
-        VALUES (?, ?, ?, ?)
-    """, (subject, grade_range, version, count))
-
     return count
 
-
 def main():
-    parser = argparse.ArgumentParser(description='导入K12知识点到SQLite')
-    parser.add_argument('--source', required=True, help='knowledge_base目录路径')
-    parser.add_argument('--db', default='k12.db', help='SQLite数据库文件路径')
-    args = parser.parse_args()
-
-    source_dir = Path(args.source)
-    if not source_dir.exists():
-        print(f"错误: 源目录不存在: {source_dir}")
-        sys.exit(1)
-
-    conn = sqlite3.connect(args.db)
+    print(f"📚 K12知识库 → SQLite 导入工具")
+    print(f"{'='*50}")
+    
+    if os.path.exists(DB_PATH):
+        os.remove(DB_PATH)
+        print(f"🗑️  清除旧数据库")
+    
+    conn = sqlite3.connect(DB_PATH)
     create_tables(conn)
-
+    
+    subjects = {
+        'math': '数学', 'physics': '物理', 'chemistry': '化学',
+        'biology': '生物', 'chinese': '语文', 'english': '英语',
+        'history': '历史', 'geography': '地理', 'politics': '政治'
+    }
+    
     total = 0
-    subject_dirs = [d for d in source_dir.iterdir() if d.is_dir()]
-
-    for subj_dir in sorted(subject_dirs):
-        json_file = subj_dir / 'knowledge_points.json'
-        if json_file.exists():
-            count = import_subject(conn, json_file, subj_dir.name)
-            print(f"  ✓ {subj_dir.name}: {count} 个知识点")
+    for en_name, cn_name in subjects.items():
+        json_path = os.path.join(KNOWLEDGE_BASE_DIR, en_name, "knowledge_points.json")
+        if os.path.exists(json_path):
+            count = import_subject(conn, json_path, cn_name)
             total += count
+            print(f"✅ {cn_name}: {count}条")
         else:
-            print(f"  ⚠ {subj_dir.name}: 未找到 knowledge_points.json")
-
+            print(f"⚠️  {cn_name}: 文件不存在")
+    
     conn.commit()
     conn.close()
-    print(f"\n完成! 共导入 {total} 个知识点到 {args.db}")
+    
+    print(f"\n{'='*50}")
+    print(f"🎉 导入完成！共{total}条知识点")
+    print(f"📦 数据库文件: {os.path.abspath(DB_PATH)}")
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -1,61 +1,96 @@
-# K12 Knowledge Base
+# K12 全学科知识库
 
-K12教育知识库结构化数据仓库，涵盖初中至高中9大学科核心知识点。
+中国高中教育全学科知识点库，基于TRAE提取的完整数据。
 
-## 目录结构
+## 📊 数据规模
+
+**总计：2007个知识点**
+
+| 学科 | 知识点数 | 说明 |
+|------|---------|------|
+| 数学 | 488 | 代数、几何、函数、概率统计等 |
+| 英语 | 372 | 语法、词汇、阅读、写作技巧等 |
+| 化学 | 290 | 无机化学、有机化学、化学反应等 |
+| 物理 | 210 | 力学、电磁学、光学、热学等 |
+| 语文 | 167 | 文言文、现代文、诗歌鉴赏、写作等 |
+| 政治 | 147 | 经济、政治、文化、哲学等 |
+| 地理 | 141 | 自然地理、人文地理、区域地理等 |
+| 历史 | 110 | 中国古代史、近代史、现代史、世界史等 |
+| 生物 | 82 | 细胞、遗传、生态、进化等 |
+
+## 📁 目录结构
 
 ```
-K12-Knowledge-Base/
-├── knowledge_base/          # 各学科知识点数据
-│   ├── math/                # 数学
-│   ├── physics/             # 物理
-│   ├── chemistry/           # 化学
-│   ├── biology/             # 生物
-│   ├── chinese/             # 语文
-│   ├── english/             # 英语
-│   ├── history/             # 历史
-│   ├── geography/           # 地理
-│   └── politics/            # 政治
-├── import_tools/            # 数据导入工具
-├── docs/                    # 文档
-└── README.md
+knowledge_base/
+├── math/           # 数学 (488条)
+│   └── knowledge_points.json
+├── physics/        # 物理 (210条)
+├── chemistry/      # 化学 (290条)
+├── biology/        # 生物 (82条)
+├── chinese/        # 语文 (167条)
+├── english/        # 英语 (372条)
+├── history/        # 历史 (110条)
+├── geography/      # 地理 (141条)
+└── politics/       # 政治 (147条)
 ```
 
-## 学科覆盖
+## 📋 数据格式
 
-| 学科 | 知识点数量 | 适用年级 |
-|------|-----------|---------|
-| 数学 | 12 | 高一-高三 |
-| 物理 | 10 | 高一-高三 |
-| 化学 | 10 | 高一-高三 |
-| 生物 | 12 | 高一-高三 |
-| 语文 | 9 | 高一-高三 |
-| 英语 | 8 | 高一-高三 |
-| 历史 | 10 | 高一-高三 |
-| 地理 | 10 | 高一-高三 |
-| 政治 | 10 | 高一-高三 |
+每个知识点包含以下字段：
 
-## 数据结构
+```json
+{
+  "subject": "数学",
+  "title": "函数概念",
+  "content": "理解函数的定义、定义域、值域...",
+  "source": "F-DataJS",
+  "difficulty": "基础"
+}
+```
 
-每个学科的 `knowledge_points.json` 包含标准化的知识点数据，详见 [docs/schema.md](docs/schema.md)。
+- **subject**: 学科名称
+- **title**: 知识点标题
+- **content**: 知识点内容描述
+- **source**: 数据来源
+- **difficulty**: 难度等级（基础/中等/提高）
 
-## 快速开始
+## 🔧 导入工具
+
+### 导入到 SQLite
 
 ```bash
-# 导入到SQLite
-python import_tools/import_to_sqlite.py --source knowledge_base/ --db k12.db
-
-# 导入到向量数据库（用于语义搜索）
-python import_tools/import_to_vector_db.py --source knowledge_base/ --db k12_vectors.db
+cd import_tools
+python import_to_sqlite.py
 ```
 
-## 数据来源
+将生成 `knowledge.db` 数据库文件。
 
-基于抢救的原始 K12 知识点数据（all_knowledge_points.json, for_edu_app_import.json）进行结构化整理和扩充。
+### 导入到向量数据库
 
-## 版本
+```bash
+cd import_tools
+python import_to_vector_db.py
+```
 
-v1.0.0 — 初始版本
+支持 ChromaDB / FAISS 等向量数据库。
+
+## 📖 文档
+
+- [数据结构说明](docs/schema.md)
+- [使用指南](docs/usage.md)
+
+## 🎯 用途
+
+- 教育APP知识点检索
+- 智能题库系统
+- AI辅助教学
+- 知识点图谱构建
+- 个性化学习推荐
+
+## 📝 版本历史
+
+- **V1.1.0** (2026-06-17): 完整版 2007条知识点（TRAE提取）
+- **V1.0.0** (2026-06-17): 初始版本 96条核心知识点
 
 ## License
 
